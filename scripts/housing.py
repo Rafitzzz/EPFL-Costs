@@ -27,15 +27,17 @@ housing_dict = {
                  "Wolf Park 5A/B & Route des Plaines-du-Loup 39A/B, 1018 Lausanne", 
                  "des Boveresses 84, 1010 Lausanne", 
                  "Rue Marterey 1-3, 1003 Lausanne", 
-                 "Rue du Petit-St-Jean 5, 1003 Lausanne"
+                 "Rue du Petit-St-Jean 5, 1003 Lausanne",
+                 "Lausanne Base, Boulevard de Grancy 51 1006 Lausanne, Switzerland",
+                 "Rue du Valentin 62, 1004 Lausanne, Switzerland"
     ],
 
     "Type": ['Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment',
-             'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Duplex'],
+             'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Apartment', 'Duplex',  "Apartment", "Apartment"],
 
-    "Price (CHF/month)": [2560, 2276, 2060, 2750, 2790, 2860, 3350, 3150, 3370, 2570, 2390, 2090, 2630, 3005, 2490, 1790, 3150, 2745, 2600, 3355],
+    "Price (CHF/month)": [2560, 2276, 2060, 2750, 2790, 2860, 3350, 3150, 3370, 2570, 2390, 2090, 2630, 3005, 2490, 1790, 3150, 2745, 2600, 3355, 4200, 5600],
 
-    "Size (m²)": [124, 85, 78, 100, 102, 100, 120, 121, 110, 76, 81, 80, 105, 122, 81, 103, 114, 109, 77, 98],
+    "Size (m²)": [124, 85, 78, 100, 102, 100, 120, 121, 110, 76, 81, 80, 105, 122, 81, 103, 114, 109, 77, 98, 70, 80],
 
     "Accommodations": [
         ['Kitchen', '3 Bedrooms', '2 WC', '1 Bathroom', '2 Balcony'],
@@ -57,7 +59,9 @@ housing_dict = {
         ['Kitchen', 'Living Room', '3 Bedrooms', '1 Bathroom', '1 Toilet', '1 Balcony'], 
         ['Kitchen', 'Living Room', '3 Bedrooms', '2 Bathroom', '2 Balcony', 'Cellar'], 
         ['Kitchen', 'Living Room', '3 Bedrooms', 'Storage/Wash room', '1 Bathroom'], 
-        ['Kitchen', 'Living Room', '2 Bedrooms', 'Office', '2 Bathroom', '1 Toilet', 'Cellar']
+        ['Kitchen', 'Living Room', '2 Bedrooms', 'Office', '2 Bathroom', '1 Toilet', 'Cellar'],
+        ['Kitchen', 'Living Room', '1 Bedrooms', '2 Bathroom', '1 Toilet'],
+        ['Kitchen', 'Living Room', '2 Bedrooms', '2 Bathroom', '1 Toilet', 'Parking']
     ],
 
     "Link": [
@@ -80,7 +84,9 @@ housing_dict = {
         "https://www.homegate.ch/louer/4001880732", 
         "https://www.homegate.ch/louer/4001876861", 
         "https://www.homegate.ch/louer/4002074870", 
-        "https://www.homegate.ch/louer/4002051405" 
+        "https://www.homegate.ch/louer/4002051405",
+        "https://www.baseaparthotels.com/en/lausanne-2/",
+        "https://www.oklogements.ch/en/appartements-et-studios/lausanne/3"
     ],
 
     "Observations": [['N/A'],
@@ -102,10 +108,17 @@ housing_dict = {
                      ['Pre-installation for washmachine/dry'], 
                      ['Rental application required'], 
                      ['Rental application required'], 
-                     ['In Heart of Lausanne']
+                     ['In Heart of Lausanne'],
+                     ['BASE XL: Un baño, pero al final son 2 cuartos y estan equipados. Wifi, Dishwasher, Nesspreso, Oven, A/C, y se ven nuevos | Podemos conectar 2 de 24 m2 y sale mas baras', 'Tel : +41 21 552 30 60 Email : hello@baselausanne.com'],
+                     ['80 m² 3.5 roomsfrom 5600 month Place de parc', 'Book Now: https://www.oklogements.ch/en/demande?rooms=3-3.5&location=Lausanne%20-%20Rue%20du%20Valentin%2062c']
     ]
 }
 
 ## Mostrar la tabla en formato pandas para visualización
 housing_df = pd.DataFrame(housing_dict)
 print(housing_df)
+
+
+# Only execute this when run directly (not when imported)
+if __name__ == "__main__":
+    print(housing_df)
