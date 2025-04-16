@@ -13,7 +13,7 @@ A simple tool to calculate and visualize the cost of living in Lausanne, Switzer
 
 1. Clone this repository:
 ```
-git clone https://github.com/your-username/lausanne-budget.git
+git clone https://github.com/Rafitzzz/EPFL-Costs.git
 cd lausanne-budget
 ```
 
