@@ -114,11 +114,89 @@ housing_dict = {
     ]
 }
 
-## Mostrar la tabla en formato pandas para visualización
+# Define the expense patterns for 24-month view
+def get_monthly_expense_patterns():
+    """
+    Returns a dictionary defining how expenses are distributed across 24 months
+    """
+    return {
+        # COLLEGE expenses
+        "tuition": {
+            "total_chf": 2920.00,
+            "monthly_values": [1460, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1460, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "registration_fee": {
+            "total_chf": 276.00,
+            "monthly_values": [138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "health_insurance": {
+            "total_chf": 14400.00,
+            "monthly_values": [600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600]
+        },
+        # SETTLEMENT expenses
+        "supplies": {
+            "total_chf": 3000.00,
+            "monthly_values": [1500, 0, 0, 1500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "housing_deposit": {
+            "total_chf": 0.00,  # This will be calculated dynamically based on housing selection
+            "monthly_values": [0] * 24  # Will be updated dynamically
+        },
+        # LIVING expenses
+        "rent": {
+            "total_chf": 0.00,  # This will be calculated dynamically based on housing selection
+            "monthly_values": [0] * 24  # Will be updated dynamically
+        },
+        "maintenance": {
+            "total_chf": 2400.00,
+            "monthly_values": [100] * 24
+        },
+        "water": {
+            "total_chf": 1200.00,
+            "monthly_values": [50] * 24
+        },
+        "electricity": {
+            "total_chf": 2400.00,
+            "monthly_values": [100] * 24
+        },
+        "wifi": {
+            "total_chf": 2400.00,
+            "monthly_values": [100] * 24
+        },
+        # PERSONAL expenses
+        "groceries": {
+            "total_chf": 24000.00,
+            "monthly_values": [1000] * 24
+        },
+        "transportation": {
+            "total_chf": 3600.00,
+            "monthly_values": [150] * 24
+        },
+        "mobile": {
+            "total_chf": 2400.00,
+            "monthly_values": [100] * 24
+        },
+        "social": {
+            "total_chf": 4800.00,
+            "monthly_values": [200] * 24
+        },
+        "trips": {
+            "total_chf": 7200.00,
+            "monthly_values": [300] * 24
+        },
+        # Seasonal expenses - vary throughout the year
+        "winter_clothing": {
+            "total_chf": 1600.00,
+            "monthly_values": [0, 0, 0, 0, 0, 0, 0, 0, 0, 800, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 800, 0, 0]
+        },
+        "holidays": {
+            "total_chf": 3000.00,
+            "monthly_values": [0, 500, 0, 0, 0, 1000, 0, 0, 0, 0, 500, 0, 0, 500, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0]
+        }
+    }
+
+# Convert to DataFrame
 housing_df = pd.DataFrame(housing_dict)
-print(housing_df)
 
-
-# Only execute this when run directly (not when imported)
 if __name__ == "__main__":
     print(housing_df)

@@ -1,30 +1,21 @@
+
 # main.py
 import os
-from scripts.financial_summary import BudgetCalculator
-from scripts.dashboard import run_dashboard
+from scripts.housing import housing_df
+from scripts.simple_dashboard import run_dashboard
 
 def main():
-    # Create output directory
-    os.makedirs("output", exist_ok=True)
+    # Create output directory if it doesn't exist
+    output_dir = "output"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     
-    print("LAUSANNE HOUSING BUDGET CALCULATOR")
-    print("="*40)
+    # Print info about available housing options
+    print(f"Loaded {len(housing_df)} housing options")
+    print(f"Price range: {housing_df['Price (CHF/month)'].min():,.0f} - {housing_df['Price (CHF/month)'].max():,.0f} CHF/month")
     
-    # Create calculator
-    calculator = BudgetCalculator()
-    
-    # Generate report for first housing option
-    print("\nGenerating budget report for first housing option...")
-    report = calculator.generate_summary_report(0)
-    print("Report saved to: output/budget_report.txt")
-    
-    # Generate visualization
-    print("\nGenerating budget visualization...")
-    chart_path = calculator.visualize_monthly_budget(0)
-    print(f"Chart saved to: {chart_path}")
-    
-    # Run dashboard
-    print("\nStarting dashboard...")
+    # Launch simplified dashboard
+    print("Starting Lausanne Budget Calculator...")
     run_dashboard()
 
 if __name__ == "__main__":
